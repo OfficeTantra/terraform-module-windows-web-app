@@ -1,0 +1,306 @@
+windows_web_apps = {
+  demo = {
+    app_settings = {}
+    auth_settings = {
+      enabled = false
+    }
+    auth_settings_v2 = {}
+    backup = {
+      enabled = false
+      name    = "custom backups"
+      schedule = {
+        frequency_interval       = 1
+        frequency_unit           = "Day"
+        keep_at_least_one_backup = true
+        retention_period_days    = 30
+        start_time               = ""
+      }
+      storage_account_url = ""
+    }
+    client_affinity_enabled            = true
+    client_certificate_enabled         = false
+    client_certificate_exclusion_paths = ""
+    client_certificate_mode            = "Required"
+    connection_string = {
+      name  = null
+      type  = null
+      value = null
+    }
+    deploy_slot = true
+    enabled     = true
+    https_only  = true
+    identity = {
+      identity_ids = []
+      type         = "SystemAssigned"
+    }
+    ip_restriction = [
+      "103.21.244.0/22",
+      "103.22.200.0/22",
+      "103.31.4.0/22",
+      "104.16.0.0/13",
+      "104.24.0.0/14",
+      "108.162.192.0/18",
+      "131.0.72.0/22",
+      "141.101.64.0/18",
+      "162.158.0.0/15",
+      "172.64.0.0/13",
+      "173.245.48.0/20",
+      "188.114.96.0/20",
+      "190.93.240.0/20",
+      "197.234.240.0/22",
+      "198.41.128.0/17",
+    ]
+    key_vault_reference_identity_id = null
+    location                        = "northeurope"
+    logs = {
+      defaults = {
+        application_logs = {
+          azure_blob_storage = {
+            level             = "Error"
+            retention_in_days = 0
+            sas_url           = ""
+          }
+          file_system_level = "Error"
+        }
+        detailed_error_messages = false
+        failed_request_tracing  = false
+        http_logs = {
+          azure_blob_storage = {
+            retention_in_days = 0
+            sas_url           = ""
+          }
+          file_system = {
+            retention_in_days = 0
+            retention_in_mb   = 100
+          }
+        }
+      }
+    }
+    name                = "app-name"
+    resource_group_name = "rg-name"
+    service_plan_id     = "plan-name"
+    site_config = {
+      always_on             = false
+      api_definition_url    = null
+      api_management_api_id = null
+      app_command_line      = null
+      application_stack = {
+        current_stack       = "dotnet"
+        dotnet_core_version = "v4.0"
+        dotnet_version      = "v4.0"
+        java_version        = "17.0.2"
+        node_version        = "~18"
+        php_version         = "Off"
+        python              = false
+        tomcat_version      = "10.0.20"
+      }
+      auto_heal_enabled                             = false
+      container_registry_managed_identity_client_id = ""
+      container_registry_use_managed_identity       = false
+      cors = {
+        allowed_origins     = []
+        support_credentials = false
+      }
+      default_documents = [
+        "Default.htm",
+        "Default.html",
+        "Default.asp",
+        "index.htm",
+        "index.html",
+        "iisstart.htm",
+        "default.aspx",
+        "index.php",
+        "hostingstart.html",
+      ]
+      ftps_state                        = "FtpsOnly"
+      health_check_eviction_time_in_min = 10
+      health_check_path                 = ""
+      http2_enabled                     = false
+      ip_restriction                    = []
+      load_balancing_mode               = "LeastRequests"
+      local_mysql_enabled               = false
+      managed_pipeline_mode             = "Integrated"
+      minimum_tls_version               = "1.2"
+      remote_debugging_enabled          = false
+      remote_debugging_version          = "VS2019"
+      scm_ip_restriction                = []
+      scm_minimum_tls_version           = "1.2"
+      scm_type                          = "None"
+      scm_use_main_ip_restriction       = false
+      use_32_bit_worker                 = true
+      virtual_application = {
+        physical_path = "site\\wwwroot"
+        preload       = false
+        virtual_directory = {
+          physical_path = null
+          virtual_path  = null
+        }
+        virtual_path = "/"
+      }
+      vnet_route_all_enabled = false
+      websockets_enabled     = false
+      worker_count           = 1
+    }
+    sticky_settings = {
+      app_setting_names       = null
+      connection_string_names = null
+    }
+    storage_account = {
+      access_key   = ""
+      account_name = null
+      mount_path   = null
+      name         = null
+      share_name   = null
+      type         = "AzureBlob"
+    }
+    tags = {
+      key = "value"
+    }
+    virtual_network_subnet_id = null
+    zip_deploy_file           = null
+  }
+  demo1 = {
+    app_settings = {}
+    auth_settings = {
+      enabled = false
+    }
+    auth_settings_v2 = {}
+    backup = {
+      enabled = false
+      name    = "custom backups"
+      schedule = {
+        frequency_interval       = 1
+        frequency_unit           = "Day"
+        keep_at_least_one_backup = true
+        retention_period_days    = 30
+        start_time               = ""
+      }
+      storage_account_url = ""
+    }
+    client_affinity_enabled            = true
+    client_certificate_enabled         = false
+    client_certificate_exclusion_paths = ""
+    client_certificate_mode            = "Required"
+    connection_string = {
+      name  = null
+      type  = null
+      value = null
+    }
+    deploy_slot = false
+    enabled     = true
+    https_only  = true
+    identity = {
+      identity_ids = []
+      type         = "SystemAssigned"
+    }
+    ip_restriction                  = []
+    key_vault_reference_identity_id = null
+    location                        = "northeurope"
+    logs = {
+      defaults = {
+        application_logs = {
+          azure_blob_storage = {
+            level             = "Error"
+            retention_in_days = 0
+            sas_url           = ""
+          }
+          file_system_level = "Error"
+        }
+        detailed_error_messages = false
+        failed_request_tracing  = false
+        http_logs = {
+          azure_blob_storage = {
+            retention_in_days = 0
+            sas_url           = ""
+          }
+          file_system = {
+            retention_in_days = 0
+            retention_in_mb   = 100
+          }
+        }
+      }
+    }
+    name                = "app-name"
+    resource_group_name = "rg-name"
+    service_plan_id     = "plan-name"
+    site_config = {
+      always_on             = false
+      api_definition_url    = null
+      api_management_api_id = null
+      app_command_line      = null
+      application_stack = {
+        current_stack       = "dotnet"
+        dotnet_core_version = "v4.0"
+        dotnet_version      = "v4.0"
+        java_version        = "17.0.2"
+        node_version        = "~18"
+        php_version         = "Off"
+        python              = false
+        tomcat_version      = "10.0.20"
+      }
+      auto_heal_enabled                             = false
+      container_registry_managed_identity_client_id = ""
+      container_registry_use_managed_identity       = false
+      cors = {
+        allowed_origins     = []
+        support_credentials = false
+      }
+      default_documents = [
+        "Default.htm",
+        "Default.html",
+        "Default.asp",
+        "index.htm",
+        "index.html",
+        "iisstart.htm",
+        "default.aspx",
+        "index.php",
+        "hostingstart.html",
+      ]
+      ftps_state                        = "FtpsOnly"
+      health_check_eviction_time_in_min = 10
+      health_check_path                 = ""
+      http2_enabled                     = false
+      ip_restriction                    = []
+      load_balancing_mode               = "LeastRequests"
+      local_mysql_enabled               = false
+      managed_pipeline_mode             = "Integrated"
+      minimum_tls_version               = "1.2"
+      remote_debugging_enabled          = false
+      remote_debugging_version          = "VS2019"
+      scm_ip_restriction                = []
+      scm_minimum_tls_version           = "1.2"
+      scm_type                          = "None"
+      scm_use_main_ip_restriction       = false
+      use_32_bit_worker                 = true
+      virtual_application = {
+        physical_path = "site\\wwwroot"
+        preload       = false
+        virtual_directory = {
+          physical_path = null
+          virtual_path  = null
+        }
+        virtual_path = "/"
+      }
+      vnet_route_all_enabled = false
+      websockets_enabled     = false
+      worker_count           = 1
+    }
+    sticky_settings = {
+      app_setting_names       = null
+      connection_string_names = null
+    }
+    storage_account = {
+      access_key   = ""
+      account_name = null
+      mount_path   = null
+      name         = null
+      share_name   = null
+      type         = "AzureBlob"
+    }
+    tags = {
+      key = "value"
+    }
+    virtual_network_subnet_id = null
+    zip_deploy_file           = null
+  }
+}
