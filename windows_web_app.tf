@@ -82,7 +82,7 @@ resource "azurerm_windows_web_app" "windows_web_app" {
     # Cloudflare or Azure Application Gateway
     dynamic "ip_restriction" {
 
-      for_each = each.value.ip_restriction
+      for_each = each.value.site_config.ip_restriction
 
       content {
         ip_address = ip_restriction.value
@@ -98,7 +98,7 @@ resource "azurerm_windows_web_app" "windows_web_app" {
 
     # Cloudflare or Azure Application Gateway
     dynamic "scm_ip_restriction" {
-      for_each = each.value.ip_restriction
+      for_each = each.value.site_config.ip_restriction
 
       content {
         ip_address = scm_ip_restriction.value
@@ -355,7 +355,7 @@ resource "azurerm_windows_web_app_slot" "windows_web_app" {
     # Cloudflare or Azure Application Gateway
     dynamic "ip_restriction" {
 
-      for_each = each.value.ip_restriction
+      for_each = each.value.site_config.ip_restriction
 
       content {
         ip_address = ip_restriction.value
@@ -371,7 +371,7 @@ resource "azurerm_windows_web_app_slot" "windows_web_app" {
 
     # Cloudflare or Azure Application Gateway
     dynamic "scm_ip_restriction" {
-      for_each = each.value.ip_restriction
+      for_each = each.value.site_config.ip_restriction
 
       content {
         ip_address = scm_ip_restriction.value

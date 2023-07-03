@@ -93,7 +93,7 @@ variable "windows_web_apps" {
       client_certificate_enabled         = bool
       client_certificate_mode            = string
       client_certificate_exclusion_paths = string
-      cloudflare_protected = bool
+      cloudflare_protected               = bool
       connection_string = object(
         {
           name  = string
@@ -111,7 +111,6 @@ variable "windows_web_apps" {
           type         = string
         }
       )
-      ip_restriction                  = list(string)
       key_vault_reference_identity_id = any
       logs = map(object(
         {
