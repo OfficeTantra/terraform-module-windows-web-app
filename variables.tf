@@ -93,6 +93,7 @@ variable "windows_web_apps" {
       client_certificate_enabled         = bool
       client_certificate_mode            = string
       client_certificate_exclusion_paths = string
+      cloudflare_protected               = bool
       connection_string = object(
         {
           name  = string
@@ -100,16 +101,16 @@ variable "windows_web_apps" {
           value = string
         }
       )
-      deploy_slot = bool
-      enabled     = bool
-      https_only  = bool
+      deploy_slot             = bool
+      enabled                 = bool
+      enable_private_endpoint = bool
+      https_only              = bool
       identity = object(
         {
           identity_ids = list(any)
           type         = string
         }
       )
-      ip_restriction                  = list(string)
       key_vault_reference_identity_id = any
       logs = map(object(
         {
@@ -140,11 +141,14 @@ variable "windows_web_apps" {
           )
         }
       ))
-      sticky_settings           = map(any)
-      storage_account           = map(any)
-      tags                      = map(any)
-      virtual_network_subnet_id = string
-      zip_deploy_file           = string
+      private_dns_zone_ids                         = list(string)
+      sticky_settings                              = map(any)
+      storage_account                              = map(any)
+      subnet_id                                    = optional(string, null)
+      tags                                         = map(any)
+      virtual_network_subnet_private_endpoint_id   = string
+      virtual_network_subnet_integration_subnet_id = string
+      zip_deploy_file                              = string
     }
   ))
 }

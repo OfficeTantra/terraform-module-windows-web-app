@@ -82,7 +82,7 @@ resource "azurerm_windows_web_app" "windows_web_app" {
     # Cloudflare or Azure Application Gateway
     dynamic "ip_restriction" {
 
-      for_each = each.value.ip_restriction
+      for_each = each.value.site_config.ip_restriction
 
       content {
         ip_address = ip_restriction.value
@@ -98,7 +98,7 @@ resource "azurerm_windows_web_app" "windows_web_app" {
 
     # Cloudflare or Azure Application Gateway
     dynamic "scm_ip_restriction" {
-      for_each = each.value.ip_restriction
+      for_each = each.value.site_config.ip_restriction
 
       content {
         ip_address = scm_ip_restriction.value
@@ -266,7 +266,7 @@ resource "azurerm_windows_web_app" "windows_web_app" {
   }
 
   tags                      = each.value.tags
-  virtual_network_subnet_id = each.value.virtual_network_subnet_id
+  virtual_network_subnet_id = each.value.virtual_network_subnet_integration_subnet_id
   zip_deploy_file           = each.value.zip_deploy_file
 }
 
@@ -274,7 +274,7 @@ resource "azurerm_windows_web_app_slot" "windows_web_app" {
 
   for_each = {
     for key, value in var.windows_web_apps : key => value
-    if value.deploy_slot == true
+    if value.deploy_slot == true && value.enable_private_endpoint == false
   }
 
   # required
@@ -355,7 +355,7 @@ resource "azurerm_windows_web_app_slot" "windows_web_app" {
     # Cloudflare or Azure Application Gateway
     dynamic "ip_restriction" {
 
-      for_each = each.value.ip_restriction
+      for_each = each.value.site_config.ip_restriction
 
       content {
         ip_address = ip_restriction.value
@@ -371,7 +371,7 @@ resource "azurerm_windows_web_app_slot" "windows_web_app" {
 
     # Cloudflare or Azure Application Gateway
     dynamic "scm_ip_restriction" {
-      for_each = each.value.ip_restriction
+      for_each = each.value.site_config.ip_restriction
 
       content {
         ip_address = scm_ip_restriction.value
@@ -514,7 +514,7 @@ resource "azurerm_windows_web_app_slot" "windows_web_app" {
   }
 
   tags                      = each.value.tags
-  virtual_network_subnet_id = each.value.virtual_network_subnet_id
+  virtual_network_subnet_id = each.value.virtual_network_subnet_integration_subnet_id
   zip_deploy_file           = each.value.zip_deploy_file
 
 }
