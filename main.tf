@@ -13,7 +13,7 @@ resource "azurerm_windows_web_app" "this" {
   service_plan_id     = azurerm_service_plan.this.id
 
   dynamic "site_config" {
-    for_each = var.site_config != null ? [var.site_config] : []
+    for_each = var.site_config != null ? var.site_config : []
 
     content {
       always_on  = site_config.value.always_on
